@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rive/rive.dart';
 
 class AnimatedBtn extends StatelessWidget {
@@ -18,29 +19,14 @@ class AnimatedBtn extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: SizedBox(
-        height: 64,
-        width: 236,
+        height: 64.h,
+        width: 236.w,
         child: Stack(
           children: [
             RiveAnimation.asset(
               "assets/RiveAssets/button.riv",
               controllers: [_btnAnimationController],
             ),
-            Positioned.fill(
-              top: 8,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Icon(CupertinoIcons.arrow_right),
-                  const SizedBox(width: 8),
-                  Text(
-                    "Start the course",
-                    style: Theme.of(context).textTheme.button,
-                  )
-                ],
-              ),
-            )
           ],
         ),
       ),

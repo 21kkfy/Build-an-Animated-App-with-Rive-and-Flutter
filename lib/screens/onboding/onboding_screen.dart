@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rive/rive.dart';
 
 import 'components/animated_btn.dart';
@@ -68,54 +69,14 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                   children: [
                     const Spacer(),
                     SizedBox(
-                      width: 260,
+                      width: 260.w,
                       child: Column(
-                        children: const [
-                          Text(
-                            "Learn design & code",
-                            style: TextStyle(
-                              fontSize: 60,
-                              fontWeight: FontWeight.w700,
-                              fontFamily: "Poppins",
-                              height: 1.2,
-                            ),
-                          ),
-                          SizedBox(height: 16),
-                          Text(
-                            "Don’t skip design. Learn design and code, by building real apps with Flutter and Swift. Complete courses about the best tools.",
-                          ),
+                        children: [
+                          SizedBox(height: 16.h),
                         ],
                       ),
                     ),
                     const Spacer(flex: 2),
-                    AnimatedBtn(
-                      btnAnimationController: _btnAnimationController,
-                      press: () {
-                        _btnAnimationController.isActive = true;
-
-                        Future.delayed(
-                          const Duration(milliseconds: 800),
-                          () {
-                            setState(() {
-                              isShowSignInDialog = true;
-                            });
-                            showCustomDialog(
-                              context,
-                              onValue: (_) {
-                                setState(() {
-                                  isShowSignInDialog = false;
-                                });
-                              },
-                            );
-                          },
-                        );
-                      },
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 24),
-                      child: Text(
-                          "Purchase includes access to 30+ courses, 240+ premium tutorials, 120+ hours of videos, source files and certificates."),
-                    )
                   ],
                 ),
               ),
