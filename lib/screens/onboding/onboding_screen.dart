@@ -35,8 +35,8 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
         children: [
           Positioned(
             width: MediaQuery.of(context).size.width * 1.7,
-            left: 100,
-            bottom: 100,
+            left: 100.w,
+            bottom: 100.h,
             child: Image.asset(
               "assets/Backgrounds/Spline.png",
             ),
@@ -63,7 +63,7 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
             duration: const Duration(milliseconds: 260),
             child: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32),
+                padding: EdgeInsets.symmetric(horizontal: 32.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
